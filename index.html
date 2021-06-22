@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Card Hover</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    </head>
+    <body>
+
+    <div class="card">
+        <div class="image">
+            <img src="images/smart-award.jpeg">
+        </div>
+        <div class="content">
+            <div class="title">Card Hover Animation</div>
+            <div class="sub-title">HTML & CSS Animation</div>
+            <div class="bottom">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sit quam, fugiat cumque libero ex dicta nobis dolorum mollitia ducimus.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.card').hover(function(){
+            if($(this).hasClass("active")){
+                $('.card .bottom').slideUp(function(){
+                    $('.card').removeClass("active");
+                });
+            }else{
+                $('.card').addClass("active"); 
+                $('.card .bottom').stop().slideDown();
+            }
+        });
+    </script>
+
+    </body>
+    </html>
+
+
+
+
